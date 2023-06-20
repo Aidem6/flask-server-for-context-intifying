@@ -16,12 +16,11 @@ accelerometerData = [
 def hello_world():
     return 'Hello, World!'
 
-@app.route('/accelerometerData')
+@app.route('/accelerometerData', methods=['GET'])
 def get_incomes():
     return jsonify(accelerometerData)
-
 
 @app.route('/accelerometerData', methods=['POST'])
 def add_income():
     accelerometerData.append(request.get_json())
-    return '', 204
+    return 'Successfully appended data', 204
