@@ -38,7 +38,7 @@ def identify_context():
         "whichAlgorithm": whichAlgorithm,
         "accelerometerData": accelerometerData,
         "result": random.choice(["walking", "driving", "cycling"]),
-        "confidence": random.randrange(0.60, 0.94, 0.01),
-        "time_needed": random.randrange(0.1, 0.4, 0.01),
+        "confidence": random.randrange(60, 94, 1) / 100.0,
+        "time_needed": random.randrange(10, 40, 1) / 100.0
     }
     return jsonify(data)
