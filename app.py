@@ -12,6 +12,8 @@ accelerometerData = [
     }
 ]
 
+# run_algorithm(whichAlgorithm, accelerometerData):
+
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
@@ -24,3 +26,11 @@ def get_incomes():
 def add_income():
     accelerometerData.append(request.get_json())
     return 'Successfully appended data', 204
+
+@app.route('/identifyContext', methods=['POST'])
+def identify_context():
+    whichAlgorithm = request.get_json()['whichAlgorithm']
+    accelerometerData = request.get_json()['accelerometerData']
+    print('whichAlgorithm: ', whichAlgorithm)
+    print('accelerometerData: ', accelerometerData)
+    return f'Running {whichAlgorithm} with following data: {accelerometerData}', 204
