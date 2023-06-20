@@ -25,12 +25,18 @@ def get_incomes():
 @app.route('/accelerometerData', methods=['POST'])
 def add_income():
     accelerometerData.append(request.get_json())
-    return 'Successfully appended data', 204
+    return jsonify('Successfully appended data')
 
 @app.route('/identifyContext', methods=['POST'])
 def identify_context():
     whichAlgorithm = request.get_json()['whichAlgorithm']
     accelerometerData = request.get_json()['accelerometerData']
-    print('whichAlgorithm: ', whichAlgorithm)
-    print('accelerometerData: ', accelerometerData)
-    return f'Running {whichAlgorithm} with following data: {accelerometerData}', 204
+    data = {
+        "status": "success",
+        "whichAlgorithm": whichAlgorithm,
+        "accelerometerData": accelerometerData,
+        "result": "walking",
+        "confidence": "0.91",
+        "time_needed": "0.01"
+    }
+    return jsonify(data)
