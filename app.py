@@ -1,4 +1,6 @@
 from flask import Flask, jsonify, request
+import random
+
 app = Flask(__name__)
 
 
@@ -35,8 +37,8 @@ def identify_context():
         "status": "success",
         "whichAlgorithm": whichAlgorithm,
         "accelerometerData": accelerometerData,
-        "result": "walking",
-        "confidence": "0.91",
-        "time_needed": "0.01"
+        "result": random.choice(["walking", "driving", "cycling"]),
+        "confidence": random.randrange(0.60, 0.94, 0.01),
+        "time_needed": random.randrange(0.1, 0.4, 0.01),
     }
     return jsonify(data)
