@@ -58,7 +58,7 @@ pep8==1.7.1
 Pillow==9.0.1
 platformdirs==2.5.2
 plucky==0.4.3
-protobuf==4.23.3
+protobuf==3.20.1
 pyasn1-modules==0.2.8
 pycosat==0.6.3
 pycurl==7.44.1
