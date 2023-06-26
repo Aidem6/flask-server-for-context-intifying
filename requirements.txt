@@ -90,5 +90,4 @@ termcolor==2.2.0
 thingspeak==1.0.0
 virtualenv==20.14.1
 webencodings==0.5.1
-xlwings==0.24.9
 zict==2.0.0
