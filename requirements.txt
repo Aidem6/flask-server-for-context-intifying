@@ -1,5 +1,5 @@
 Flask
 Gunicorn
-keras==2.12.0
+keras==2.0.1
 Keras-Applications==1.0.6
 Keras-Preprocessing==1.0.5
